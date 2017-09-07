@@ -6,7 +6,7 @@ default: prog3
 #     gcc -c program.c -o program.o
 
 prog3: prog3.c
-	gcc -g prog3.c -o prog3 -lm
+	gcc -g prog3.c -o prog3 -lm -std=c99
 
 clean:
 	-rm -f prog3

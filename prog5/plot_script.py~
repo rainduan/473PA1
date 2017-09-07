@@ -1,6 +1,4 @@
 import sys
-import matplotlib as mpl
-mpl.use('Agg')
 import matplotlib.pyplot as plt
 # rootdir = sys.argv[1]
 path = sys.argv[1]
@@ -39,11 +37,10 @@ plt.title('Total Memory Consumption')
 
 # show a legend on the plot
 # line2, = plt.plot([3,2,1], label="Memory Consumption in KB", linewidth=1)
-# plt.legend(handles=[line1], loc=1)
+plt.legend(handles=[line1], loc=1)
 
 # function to show the plot
 # plt.show()
 
 plt.savefig('memory_utilization.png')
-#plt.show()
-
+plt.show()
