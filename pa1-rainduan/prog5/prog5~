@@ -1,0 +1,25 @@
+#!/bin/bash
+if [ -f $1outputfile.txt ]; then
+   rm $1outputfile.txt
+fi
+
+while true
+do
+	if ! pgrep -x $1 > /dev/null
+	then		
+		exit 1	
+	fi
+        if [ "$1" = "" ];
+        then
+	echo noinput
+	exit 1	
+        else 
+             pmap $(pgrep $1) | grep total | tr -dc '0-9' >> $1outputfile.txt
+		echo $1
+		echo hi
+		echo >> $1outputfile.txt
+	fi
+	
+	sleep 1s
+
+done
